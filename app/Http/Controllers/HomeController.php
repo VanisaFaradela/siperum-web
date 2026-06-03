@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Cluster;
 use App\Models\Page;
 use App\Models\TipeRumah;
-use App\Models\Promo;
 use App\Models\Berita;
 use App\Models\Galeri;
 use App\Models\Kontak;
@@ -26,7 +25,6 @@ class HomeController extends Controller
         $clusters = Cluster::where('status', 'aktif')->get();
         
         $tipeRumah = TipeRumah::limit(4)->get();
-        $promo = Promo::active()->limit(3)->get();
         $page = Page::where('slug', 'tentang-kami')->first();
         
         $berita = Berita::where('status', 'published')
