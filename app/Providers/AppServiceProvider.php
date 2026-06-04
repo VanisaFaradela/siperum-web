@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('layouts.app', function ($view) {
-            $tipeRumah = TipeRumah::with('cluster')->limit(4)->get();
+            $tipeRumah = TipeRumah::limit(4)->get();
 
             $view->with('tipeRumah', $tipeRumah);
         });
