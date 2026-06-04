@@ -1083,7 +1083,7 @@
             <div class="galeri-grid" id="galeriGrid">
                 @forelse($galeri as $item)
                 <div class="galeri-item" data-category="{{ $item->kategori_foto ?? 'umum' }}" style="cursor: pointer;">
-                    <img src="{{ $item->gambar ? route('media.galeri', $item->gambar) : 'https://via.placeholder.com/400x400?text=Gambar+Tidak+Tersedia' }}" alt="{{ $item->judul_galeri }}">
+                    <img src="{{ $item->foto ? route('media.galeri', $item->foto) : 'https://via.placeholder.com/400x400?text=Gambar+Tidak+Tersedia' }}" alt="{{ $item->judul_galeri }}">
                     <div class="galeri-overlay">
                         <i class="fas fa-search-plus"></i>
                         <h4>{{ $item->judul_galeri }}</h4>
