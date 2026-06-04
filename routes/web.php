@@ -86,9 +86,27 @@ Route::get('/media/cluster/{file}', function ($file) {
 
 // Route untuk detail tipe rumah
 Route::get('/tipe-detail/{id}', [TipeRumahController::class, 'detail'])->name('tipe-detail');
+Route::get('/media/tipe-rumah/{file}', function ($file) {
+
+    $path = '/home/u143856011/shared/uploads/tipe-rumah/' . $file;
+
+    abort_unless(file_exists($path), 404);
+
+    return response()->file($path);
+
+})->where('file', '.*')->name('media.tipe-rumah');
 
 // Route untuk Tentang Kami
 Route::get('/tentang', [PageController::class, 'tentang'])->name('tentang');
+Route::get('/media/pages/{file}', function ($file) {
+
+    $path = '/home/u143856011/shared/uploads/pages/' . $file;
+
+    abort_unless(file_exists($path), 404);
+
+    return response()->file($path);
+
+})->where('file', '.*')->name('media.pages');
 Route::get('/media/team/{file}', function ($file) {
 
     $path = '/home/u143856011/shared/uploads/team/' . $file;

@@ -198,7 +198,7 @@
                 <div class="gallery-main">
                     <img
                         id="mainImage"
-                        src="{{ $tipe->fotoRumahUrl }}"
+                        src="{{ route('media.tipe-rumah', basename($tipe->fotoRumahUrl)) }}"
                         alt="{{ $tipe->nama_tipe }}"
                         onclick="openLightbox(this.src)"
                     >
@@ -209,10 +209,11 @@
                     @foreach($tipe->fotoRumahUrls as $foto)
 
                     <div class="gallery-thumb"
-                        onclick="changeImage('{{ $foto }}')">
+                        onclick="changeImage('{{ route('media.tipe-rumah', $foto) }}')">
 
-                        <img src="{{ $foto }}" alt="Foto Rumah">
-
+                        <img
+                            src="{{ route('media.tipe-rumah', $foto) }}"
+                            alt="Foto Rumah">
                     </div>
 
                     @endforeach
@@ -220,10 +221,10 @@
                     @if($tipe->fotoDenahUrl)
 
                     <div class="gallery-thumb"
-                        onclick="changeImage('{{ $tipe->fotoDenahUrl }}')">
+                        onclick="changeImage('{{ route('media.tipe-rumah', $tipe->fotoDenahUrl) }}')">
 
                         <img
-                            src="{{ $tipe->fotoDenahUrl }}"
+                            src="{{ route('media.tipe-rumah', $tipe->fotoDenahUrl) }}"
                             alt="Denah Rumah">
 
                     </div>

@@ -331,10 +331,10 @@
                 {!! nl2br($page->content ?? '') !!}
             </p>
 
-            @if(!empty($page->featured_image_url))
+            @if(!empty($page->featured_image))
             <div style="margin-top:30px;">
-                <img 
-                    src="{{ $page->featured_image_url }}"
+                <img
+                    src="{{ route('media.pages', basename($page->featured_image)) }}"
                     alt="{{ $page->title }}"
                     style="width:100%; border-radius:20px;"
                 >
