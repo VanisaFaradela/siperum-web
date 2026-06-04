@@ -30,6 +30,15 @@ Route::prefix('berita')->group(function () {
     Route::get('/{identifier}', [BeritaController::class, 'show'])->name('berita.show');
     Route::post('/{id}/komentar', [BeritaController::class, 'komentar'])->name('berita.komentar'); // Tambahkan ini
 });
+Route::get('/media/berita/{file}', function ($file) {
+
+    $path = '/home/u143856011/shared/uploads/berita/' . $file;
+
+    abort_unless(file_exists($path), 404);
+
+    return response()->file($path);
+
+})->where('file', '.*')->name('media.berita');
 
 // Route untuk Galeri
 Route::prefix('galeri')->group(function () {

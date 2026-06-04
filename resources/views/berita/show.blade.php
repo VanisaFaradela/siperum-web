@@ -129,7 +129,7 @@
     <section class="berita-detail-section">
         <div class="container">
             <div class="berita-detail-container">
-                <div class="berita-detail-image" style="background-image: url('{{ $berita->gambar_url ?? 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&w=800&h=400&fit=crop' }}');"></div>
+                <div class="berita-detail-image" style="background-image: url('{{ $berita->gambar ? route('media.berita', $berita->gambar) : 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&w=800&h=400&fit=crop' }}');"></div>
                 <div class="berita-detail-content">
                     <div class="berita-detail-date">
                         <i class="far fa-calendar-alt"></i> {{ \Carbon\Carbon::parse($berita->created_at)->format('d F Y') }}

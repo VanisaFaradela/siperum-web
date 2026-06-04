@@ -69,7 +69,7 @@ class Berita extends Model
     {
         return self::resolveImageUrl($this->gambar);
     }
-
+    
     // Scope untuk mengambil promo aktif
     public function scopePromoAktif($query)
     {

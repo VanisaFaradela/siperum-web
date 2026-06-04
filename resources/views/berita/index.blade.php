@@ -177,7 +177,7 @@
             <div class="berita-grid">
                 @forelse($berita as $item)
                 <a href="{{ route('berita.show', $item->slug) }}" class="berita-card">
-                    <div class="berita-image" style="background-image: url('{{ $item->gambar_url ?: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&w=400&h=220&fit=crop' }}');"></div>
+                    <div class="berita-image" style="background-image:url('{{ route('media.berita', $item->gambar) }}')"></div>
                     <div class="berita-date">
                         <i class="far fa-calendar-alt"></i> {{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }}
                     </div>
