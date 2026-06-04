@@ -89,6 +89,15 @@ Route::get('/tipe-detail/{id}', [TipeRumahController::class, 'detail'])->name('t
 
 // Route untuk Tentang Kami
 Route::get('/tentang', [PageController::class, 'tentang'])->name('tentang');
+Route::get('/media/team/{file}', function ($file) {
+
+    $path = '/home/u143856011/shared/uploads/team/' . $file;
+
+    abort_unless(file_exists($path), 404);
+
+    return response()->file($path);
+
+})->where('file', '.*')->name('media.team');
 
 Route::post('/promo-modal-seen', function() {
     session(['promo_closed' => true]);
