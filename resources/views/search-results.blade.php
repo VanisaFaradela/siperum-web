@@ -222,9 +222,9 @@
 
                     <div class="card-body">
 
-                        <p>{{ \Illuminate\Support\Str::limit($c->deskripsi_cluster ?? '-', 120) }}</p>
+                        <p>{{ \Illuminate\Support\Str::limit($c->deskripsi ?? '-', 120) }}</p>
 
-                        <a href="{{ route('cluster.show', $c->cluster_id) }}" class="result-link">
+                        <a href="{{ route('cluster.show', $c->id_cluster) }}" class="result-link">
                             Lihat Detail
                             <i class="fas fa-arrow-right"></i>
                         </a>
