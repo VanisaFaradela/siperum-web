@@ -18,12 +18,13 @@ class ClusterController extends Controller
     // Halaman detail cluster
     public function show($id)
     {
-        // Ambil data cluster berdasarkan id_cluster
-        $cluster = Cluster::where('id_cluster', $id)->firstOrFail();
-        
-        // Ambil tipe rumah berdasarkan id_cluster
-        $tipeRumah = TipeRumah::where('id_cluster', $cluster->id_cluster)->get();
-        
+        $cluster = Cluster::findOrFail($id);
+
+        $tipeRumah = TipeRumah::where(
+            'cluster_id',
+            $cluster->id_cluster
+        )->get();
+
         return view('cluster.show', compact('cluster', 'tipeRumah'));
     }
 }
