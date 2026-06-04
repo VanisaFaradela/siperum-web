@@ -51,7 +51,11 @@ class TipeRumah extends Model
     // Relasi ke Cluster
     public function cluster()
     {
-        return $this->belongsTo(Cluster::class, 'cluster_id', 'cluster_id');
+        return $this->belongsTo(
+            Cluster::class,
+            'cluster_id',
+            'id_cluster'
+        );
     }
     
     // Accessor untuk foto_tampak_depan (ambil gambar pertama dari array)
