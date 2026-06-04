@@ -44,6 +44,15 @@ Route::get('/media/berita/{file}', function ($file) {
 Route::prefix('galeri')->group(function () {
     Route::get('/', [GaleriController::class, 'index'])->name('galeri.index');
 });
+Route::get('/media/galeri/{file}', function ($file) {
+
+    $path = '/home/u143856011/shared/uploads/galeri/' . $file;
+
+    abort_unless(file_exists($path), 404);
+
+    return response()->file($path);
+
+})->where('file', '.*')->name('media.galeri');
 
 // Route Admin untuk Galeri
 // Admin Authentication Routes

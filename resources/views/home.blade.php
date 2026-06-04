@@ -1052,7 +1052,7 @@
             <div class="berita-grid">
                 @forelse($berita as $item)
                 <div class="berita-card">
-                    <div class="berita-image" style="background-image: url('{{ $item->gambar_url ?? 'https://via.placeholder.com/400x220?text=Gambar+Berita+Tidak+Tersedia' }}');"></div>
+                    <div class="berita-image" style="background-image: url('{{ $item->gambar ? route('media.berita', $item->gambar) : 'https://via.placeholder.com/400x220?text=Gambar+Berita+Tidak+Tersedia' }}');"></div>
                     <div class="berita-date"><i class="far fa-calendar-alt"></i> {{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }}</div>
                     <div class="berita-content">
                         <h3>{{ $item->judul }}</h3>
@@ -1083,7 +1083,7 @@
             <div class="galeri-grid" id="galeriGrid">
                 @forelse($galeri as $item)
                 <div class="galeri-item" data-category="{{ $item->kategori_foto ?? 'umum' }}" style="cursor: pointer;">
-                    <img src="{{ $item->gambar_url ?? 'https://via.placeholder.com/400x400' }}" alt="{{ $item->judul_galeri }}">
+                    <img src="{{ $item->gambar ? route('media.galeri', $item->gambar) : 'https://via.placeholder.com/400x400?text=Gambar+Tidak+Tersedia' }}" alt="{{ $item->judul_galeri }}">
                     <div class="galeri-overlay">
                         <i class="fas fa-search-plus"></i>
                         <h4>{{ $item->judul_galeri }}</h4>
