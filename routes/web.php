@@ -56,6 +56,15 @@ Route::prefix('cluster')->group(function () {
     Route::get('/', [ClusterController::class, 'index'])->name('cluster.index');
     Route::get('/{id}', [ClusterController::class, 'show'])->name('cluster.show');
 });
+Route::get('/media/cluster/{file}', function ($file) {
+
+    $path = '/home/u143856011/shared/uploads/cluster/' . $file;
+
+    abort_unless(file_exists($path), 404);
+
+    return response()->file($path);
+
+})->where('file', '.*')->name('media.cluster');
 
 // Route untuk detail tipe rumah
 Route::get('/tipe-detail/{id}', [TipeRumahController::class, 'detail'])->name('tipe-detail');

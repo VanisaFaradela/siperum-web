@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Cluster extends Model
 {
     protected $table = 'cluster';
-    protected $primaryKey = 'cluster_id';
+    protected $primaryKey = 'id_cluster';
     protected $keyType = 'int';
     public $incrementing = true;
     
     protected $fillable = [
         'nama_cluster',
         'slug',
-        'lokasi_cluster',
+        'alamat',
         'kota',
         'provinsi',
         'kode_pos',
@@ -23,10 +23,10 @@ class Cluster extends Model
         'total_unit',
         'unit_terjual',
         'unit_tersedia',
-        'deskripsi_cluster',
+        'deskripsi',
         'fasilitas',
-        'logo_cluster',
-        'gambar_cluster',
+        'logo',
+        'foto_utama',
         'foto_lainnya',
         'latitude',
         'longitude',
@@ -54,22 +54,22 @@ class Cluster extends Model
         'one_gate_system' => 'boolean',
     ];
     
-    // 🔥 PERBAIKAN: foreign key dan local key harus SAMA-SAMA 'cluster_id'
+    // PERBAIKAN: foreign key dan local key harus SAMA-SAMA 'id_cluster'
     public function tipeRumah()
     {
-        return $this->hasMany(TipeRumah::class, 'cluster_id', 'cluster_id');
+        return $this->hasMany(TipeRumah::class, 'cluster_id', 'id_cluster');
         //                                          ↑ foreign key di tipe_rumah
         //                                                       ↑ local key di cluster
     }
 
     public function getLogoUrlAttribute()
     {
-        return self::resolveImageUrl($this->logo_cluster);
+        return self::resolveImageUrl($this->logo);
     }
 
     public function getFotoUtamaUrlAttribute()
     {
-        return self::resolveImageUrl($this->gambar_cluster);
+        return self::resolveImageUrl($this->foto_utama);
     }
 
     public function getFotoLainnyaUrlsAttribute()
@@ -84,16 +84,16 @@ class Cluster extends Model
     // 🔥 PERBAIKAN: Relasi ke berita, galeri, promo juga
     public function berita()
     {
-        return $this->hasMany(Berita::class, 'cluster_id', 'cluster_id');
+        return $this->hasMany(Berita::class, 'cluster_id', 'id_cluster');
     }
     
     public function galeri()
     {
-        return $this->hasMany(Galeri::class, 'cluster_id', 'cluster_id');
+        return $this->hasMany(Galeri::class, 'cluster_id', 'id_cluster');
     }
     
     public function promo()
     {
-        return $this->hasMany(Promo::class, 'cluster_id', 'cluster_id');
+        return $this->hasMany(Promo::class, 'cluster_id', 'id_cluster');
     }
 }

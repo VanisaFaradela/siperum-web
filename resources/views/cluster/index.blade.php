@@ -187,16 +187,16 @@
         <div class="container">
             <div class="cluster-grid">
                 @forelse($clusters as $item)
-                <a href="{{ route('cluster.show', $item->cluster_id) }}" class="cluster-card">
-                    <div class="cluster-image" style="background-image: url('{{ $item->gambar_cluster ? asset($item->gambar_cluster) : 'https://via.placeholder.com/400x400?text=Gambar+Tidak+Tersedia' }}');">
+                <a href="{{ route('cluster.show', $item->id_cluster) }}" class="cluster-card">
+                    <div class="cluster-image" style="background-image: url('{{ $item->foto_utama ? route('media.cluster', $item->foto_utama) : 'https://via.placeholder.com/400x400?text=Gambar+Tidak+Tersedia' }}');">
                         <div class="cluster-badge">{{ $item->status ?? 'Aktif' }}</div>
                     </div>
                     <div class="cluster-content">
                         <h3>{{ $item->nama_cluster }}</h3>
                         <div class="cluster-location">
-                            <i class="fas fa-map-marker-alt"></i> {{ $item->lokasi_cluster ?? 'Lokasi Strategis' }}
+                            <i class="fas fa-map-marker-alt"></i> {{ $item->alamat ?? 'Lokasi Strategis' }}
                         </div>
-                        <p>{{ Str::limit($item->deskripsi_cluster ?? 'Cluster dengan fasilitas lengkap dan lokasi strategis. Nyaman untuk keluarga.', 100) }}</p>
+                        <p>{{ Str::limit($item->deskripsi ?? 'Cluster dengan fasilitas lengkap dan lokasi strategis. Nyaman untuk keluarga.', 100) }}</p>
                         <div class="cluster-stats">
                             <span><i class="fas fa-home"></i> {{ $item->total_unit ?? 0 }} Unit</span>
                             <span><i class="fas fa-check-circle"></i> {{ $item->unit_tersedia ?? 0 }} Tersedia</span>

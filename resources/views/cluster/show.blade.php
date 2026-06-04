@@ -251,7 +251,7 @@
 <section class="cluster-hero">
     <div class="container">
         <h1>{{ $cluster->nama_cluster }}</h1>
-        <p>{{ $cluster->lokasi_cluster ?? 'Lokasi belum tersedia' }}</p>
+        <p>{{ $cluster->alamat ?? 'Lokasi belum tersedia' }}</p>
     </div>
 </section>
 
@@ -268,7 +268,7 @@
             </h3>
 
             <p>
-                {{ $cluster->deskripsi_cluster ?? 'Deskripsi belum tersedia.' }}
+                {{ $cluster->deskripsi ?? 'Deskripsi belum tersedia.' }}
             </p>
 
             {{-- FASILITAS --}}
