@@ -1005,8 +1005,8 @@
                     @forelse($clusters as $clusterItem)
                     <div class="category-card">
                         <div class="category-icon">
-                            @if($clusterItem->logo_cluster)
-                                <img src="{{ asset($clusterItem->logo_cluster) }}"
+                            @if($clusterItem->logo)
+                                <img src="{{ asset($clusterItem->logo) }}"
                                     alt="{{ $clusterItem->nama_cluster }}"
                                     width="40"
                                     height="40"
@@ -1016,8 +1016,8 @@
                             @endif
                         </div>
                         <h3>{{ $clusterItem->nama_cluster }}</h3>
-                        <p>{{ Str::limit($clusterItem->deskripsi_cluster ?? 'Cluster dengan fasilitas lengkap dan lokasi strategis. Nyaman untuk keluarga.', 100) }}</p>
-                        <a href="{{ route('cluster.show', $clusterItem->cluster_id) }}" class="category-link">
+                        <p>{{ Str::limit($clusterItem->deskripsi ?? 'Cluster dengan fasilitas lengkap dan lokasi strategis. Nyaman untuk keluarga.', 100) }}</p>
+                        <a href="{{ route('cluster.show', $clusterItem->id_cluster) }}" class="category-link">
                             Lihat Detail <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
