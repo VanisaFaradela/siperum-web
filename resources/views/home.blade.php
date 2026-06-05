@@ -1229,7 +1229,7 @@
     }
 
     // Scroll Progress Bar
-    const scrollProgress = document.getElementById('scrollProgress');
+    let scrollProgress = document.getElementById('scrollProgress');
     
     window.addEventListener('scroll', function() {
         const windowHeight = window.innerHeight;
