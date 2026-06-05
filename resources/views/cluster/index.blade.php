@@ -188,7 +188,7 @@
             <div class="cluster-grid">
                 @forelse($clusters as $item)
                 <a href="{{ route('cluster.show', $item->id_cluster) }}" class="cluster-card">
-                    <div class="cluster-image" style="background-image: url('{{ $item->foto_utama ? route('media.cluster', $item->foto_utama) : 'https://via.placeholder.com/400x400?text=Gambar+Tidak+Tersedia' }}');">
+                    <div class="cluster-image" style="background-image: url('{{ $item->foto_utama ? route('media.cluster', basename($item->foto_utama)) : 'https://via.placeholder.com/400x400?text=Gambar+Tidak+Tersedia' }}');">
                         <div class="cluster-badge">{{ $item->status ?? 'Aktif' }}</div>
                     </div>
                     <div class="cluster-content">
