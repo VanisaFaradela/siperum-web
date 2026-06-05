@@ -109,7 +109,7 @@ Route::get('/media/pages/{file}', function ($file) {
 })->where('file', '.*')->name('media.pages');
 Route::get('/media/team/{file}', function ($file) {
 
-    $path = '/home/u143856011/shared/uploads/team/' . $file;
+    $path = '/home/u143856011/shared/' . $file;
 
     abort_unless(file_exists($path), 404);
 

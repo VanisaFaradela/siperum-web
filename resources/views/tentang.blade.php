@@ -374,7 +374,7 @@
                 @forelse($team as $member)
                 <div class="team-card">
                     <img
-                        src="{{ $member->foto ? route('media.team', $member->foto) : 'https://via.placeholder.com/400x400' }}"
+                        src="{{ $member->foto ? route('media.team', basename($member->foto)) : 'https://via.placeholder.com/400x400' }}"
                         alt="{{ $member->nama }}"
                         class="team-photo"
                     >
