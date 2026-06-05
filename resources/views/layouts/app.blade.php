@@ -558,7 +558,9 @@ $kontak = DB::table('kontak')->first();
                         <i class="fas fa-leaf"></i>
                     </div>
                     <div class="logo-text">
-                        SIPERUM
+                        <a class="navbar-brand" href="{{ route('home') }}">
+                            SIPERUM
+                        </a>
                     </div>
                 </div>
                 <ul class="nav-menu">
