@@ -1114,12 +1114,20 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
     // Swiper Hero
-    var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 0,
-        centeredSlides: true,
-        autoplay: { delay: 5000, disableOnInteraction: false },
-        pagination: { el: ".swiper-pagination", clickable: true },
-        loop: true,
+    document.addEventListener('DOMContentLoaded', function () {
+
+        var swiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            }
+        });
+
     });
 
     // Galeri Filter
