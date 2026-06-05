@@ -88,15 +88,13 @@ Route::get('/media/cluster/{file}', function ($file) {
 Route::get('/tipe-detail/{id}', [TipeRumahController::class, 'detail'])->name('tipe-detail');
 Route::get('/media/tipe-rumah/{file}', function ($file) {
 
-    $path = public_path('uploads/tipe-rumah/' . $file);
+    $path = '/home/u143856011/shared/uploads/tipe-rumah/' . $file;
 
-    if (!file_exists($path)) {
-        abort(404);
-    }
+    abort_unless(file_exists($path), 404);
 
     return response()->file($path);
 
-})->name('media.tipe-rumah');;
+})->where('file', '.*')->name('media.tipe-rumah');
 
 // Route untuk Tentang Kami
 Route::get('/tentang', [PageController::class, 'tentang'])->name('tentang');
