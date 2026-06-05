@@ -1111,11 +1111,12 @@
 @endsection
 
 @push('scripts')
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
     // Swiper Hero
     document.addEventListener('DOMContentLoaded', function () {
 
+        console.log("Swiper =", typeof Swiper);
+        console.log("Element =", document.querySelector(".mySwiper"));
         var swiper = new Swiper(".mySwiper", {
             autoplay: {
                 delay: 5000,
@@ -1227,29 +1228,6 @@
             kategoriSlider.scrollBy({ left: -320, behavior: 'smooth' });
         };
     }
-
-    // Scroll Progress Bar
-    let scrollProgress = document.getElementById('scrollProgress');
-    
-    window.addEventListener('scroll', function() {
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-        const scrollTop = window.scrollY;
-        const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-        
-        if (scrollProgress) {
-            scrollProgress.style.width = scrollPercentage + '%';
-        }
-        
-        const header = document.querySelector('.header');
-        if (header) {
-            if (scrollTop > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }
-    });
     
     // Intersection Observer untuk fade-in effects
     const fadeElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');

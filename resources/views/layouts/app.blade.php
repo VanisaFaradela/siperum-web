@@ -720,14 +720,14 @@ $kontak = DB::table('kontak')->first();
         });
 
         // Scroll Progress Bar
-        const scrollProgress = document.getElementById('scrollProgress');
+       const progressBar = document.getElementById('scrollProgress');
         
         window.addEventListener('scroll', () => {
             const windowHeight = window.innerHeight;
             const documentHeight = document.documentElement.scrollHeight;
             const scrollTop = window.scrollY;
             const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-            if (scrollProgress) scrollProgress.style.width = scrollPercentage + '%';
+            if (progressBar) progressBar.style.width = scrollPercentage + '%';
             
             const header = document.querySelector('.header');
             if (header) {
