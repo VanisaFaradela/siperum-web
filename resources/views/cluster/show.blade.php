@@ -281,14 +281,18 @@
 
             <div class="fasilitas-list">
 
-                @foreach(explode(',', $cluster->fasilitas) as $fasilitas)
+                @php
+                    $fasilitas = json_decode($cluster->fasilitas, true);
+                @endphp
 
-                <div class="fasilitas-item">
-                    <i class="fas fa-check"></i>
-                    {{ trim($fasilitas) }}
-                </div>
-
-                @endforeach
+                @if($fasilitas)
+                    @foreach($fasilitas as $item)
+                        <div class="fasilitas-item">
+                            <i class="fas fa-check"></i>
+                            {{ $item }}
+                        </div>
+                    @endforeach
+                @endif
 
             </div>
 
