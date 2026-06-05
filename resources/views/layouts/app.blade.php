@@ -680,7 +680,7 @@ $kontak = DB::table('kontak')->first();
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} {{ $cluster->nama_cluster ?? 'Cluster' }}. All rights reserved.</p>
+                <p>&copy; {{ date('Y') }} SIPERUM. All rights reserved.</p>
             </div>
         </div>
     </footer>
