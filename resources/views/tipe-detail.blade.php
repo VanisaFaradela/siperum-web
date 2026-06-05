@@ -209,10 +209,10 @@
                     @foreach($tipe->fotoRumahUrls as $foto)
 
                     <div class="gallery-thumb"
-                        onclick="changeImage('{{ route('media.tipe-rumah', $foto) }}')">
+                        onclick="changeImage('{{ route('media.tipe-rumah', basename($foto)) }}')">
 
                         <img
-                            src="{{ route('media.tipe-rumah', $foto) }}"
+                            src="{{ route('media.tipe-rumah', basename($foto)) }}"
                             alt="Foto Rumah">
                     </div>
 
@@ -221,10 +221,10 @@
                     @if($tipe->fotoDenahUrl)
 
                     <div class="gallery-thumb"
-                        onclick="changeImage('{{ route('media.tipe-rumah', $tipe->fotoDenahUrl) }}')">
+                        onclick="changeImage('{{ route('media.tipe-rumah', basename($tipe->fotoDenahUrl)) }}')">
 
                         <img
-                            src="{{ route('media.tipe-rumah', $tipe->fotoDenahUrl) }}"
+                            src="{{ route('media.tipe-rumah', basename($tipe->fotoDenahUrl)) }}"
                             alt="Denah Rumah">
 
                     </div>
