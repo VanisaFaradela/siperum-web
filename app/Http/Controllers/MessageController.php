@@ -12,7 +12,7 @@ class MessageController extends Controller
         DB::table('message')->insert([
             'nama' => $request->nama,
             'email' => $request->email,
-            'telepon' => '-',
+            'telepon' => $request->telepon,
             'subjek' => 'Pesan Website',
             'pesan' => $request->pesan,
             'status' => 'belum_dibaca',
