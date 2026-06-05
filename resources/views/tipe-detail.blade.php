@@ -306,6 +306,12 @@
                             Rp {{ number_format($tipe->harga ?? 0,0,',','.') }}
                         </span>
                     </li>
+                    <li>
+                        <span class="spec-label">Harga Promo</span>
+                        <span class="spec-value">
+                            Rp {{ number_format($tipe->harga_promo ?? 0,0,',','.') }}
+                        </span>
+                    </li>
 
                 </ul>
 
