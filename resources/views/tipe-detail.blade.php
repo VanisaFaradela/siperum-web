@@ -218,15 +218,14 @@
 
                     @endforeach
 
-                    @if($tipe->fotoDenahUrl)
+                    @if($tipe->foto_denah)
 
                     <div class="gallery-thumb"
-                        onclick="changeImage('{{ route('media.tipe-rumah', basename($tipe->fotoDenahUrl)) }}')">
+                        onclick="changeImage('{{ route('media.tipe-rumah', basename($tipe->foto_denah)) }}')">
 
                         <img
-                            src="{{ route('media.tipe-rumah', basename($tipe->fotoDenahUrl)) }}"
-                            alt="Denah Rumah"
-                            onerror="alert(this.src)">
+                            src="{{ route('media.tipe-rumah', basename($tipe->foto_denah)) }}"
+                            alt="Denah Rumah">
                     </div>
 
                     @endif
