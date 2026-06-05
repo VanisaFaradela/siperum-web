@@ -73,6 +73,19 @@ $kontak = DB::table('kontak')->first();
             gap: 10px;
         }
 
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo-link:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
         .logo-icon {
             color: #2e7d32;
             font-size: 24px;
@@ -81,8 +94,6 @@ $kontak = DB::table('kontak')->first();
         .logo-text {
             font-size: 24px;
             font-weight: 700;
-            color: #333;
-            letter-spacing: 1px;
         }
 
         .nav-menu {
@@ -554,14 +565,14 @@ $kontak = DB::table('kontak')->first();
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <div class="logo-text">
-                        <a class="navbar-brand" href="{{ route('home') }}">
+                    <a href="{{ route('home') }}" class="logo-link">
+                        <div class="logo-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="logo-text">
                             SIPERUM
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="{{ route('home') }}" class="@if(Route::currentRouteName() == 'home') active @endif">Home</a></li>
