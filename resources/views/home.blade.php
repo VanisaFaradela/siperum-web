@@ -906,7 +906,9 @@
     <div id="promoPopup" class="popup-overlay">
         <div class="popup-card">
             <div class="popup-card-close" onclick="closePopup()">&times;</div>
-            <img src="{{ $promoBerita->gambar_url ?? 'https://placehold.co/400x220/28a745/white?text=PROMO' }}" class="popup-card-img" alt="{{ $promoBerita->judul ?? 'Promo' }}" onerror="this.src='https://placehold.co/400x220/28a745/white?text=PROMO'">
+            <img src="{{ $promoBerita->gambar ? route('media.berita', $promoBerita->gambar) : 'https://placehold.co/400x220/28a745/white?text=PROMO' }}"
+                class="popup-card-img"
+                alt="{{ $promoBerita->judul ?? 'Promo' }}">
             <div class="popup-card-badge">
                 <i class="fas fa-fire"></i> PROMO TERBATAS!
             </div>
