@@ -316,7 +316,7 @@
                 </div>
             @endif
 
-            <h2>{{ $cluster->nama_cluster ?? 'Cluster Modern' }}</h2>
+            <h2>Siperum</h2>
 
             <div class="slogan">
                 {{ $cluster->slogan ?? 'Hunian Nyaman dan Modern' }}
