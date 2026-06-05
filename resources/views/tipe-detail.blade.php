@@ -225,8 +225,8 @@
 
                         <img
                             src="{{ route('media.tipe-rumah', basename($tipe->fotoDenahUrl)) }}"
-                            alt="Denah Rumah">
-
+                            alt="Denah Rumah"
+                            onerror="alert(this.src)">
                     </div>
 
                     @endif
