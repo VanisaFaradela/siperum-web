@@ -67,15 +67,22 @@ $kontak = DB::table('kontak')->first();
             gap: 10px;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .logo-icon {
-            font-size: 28px;
-            color: #181E4B;
+            color: #2e7d32;
+            font-size: 24px;
         }
 
         .logo-text {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 700;
-            color: #181E4B;
+            color: #333;
+            letter-spacing: 1px;
         }
 
         .nav-menu {
@@ -548,10 +555,10 @@ $kontak = DB::table('kontak')->first();
             <div class="nav-container">
                 <div class="logo">
                     <div class="logo-icon">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-leaf"></i>
                     </div>
                     <div class="logo-text">
-                        Logo
+                        SIPERUM
                     </div>
                 </div>
                 <ul class="nav-menu">
