@@ -115,7 +115,7 @@ class HomeController extends Controller
 
         // Pencarian Cluster
         $clusters = Cluster::where('nama_cluster', 'LIKE', "%{$search}%")
-            ->orWhere('deskripsi_cluster', 'LIKE', "%{$search}%")
+            ->orWhere('deskripsi', 'LIKE', "%{$search}%")
             ->get();
         
         $cluster = Cluster::first();
