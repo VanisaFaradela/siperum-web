@@ -17,8 +17,6 @@ class MessageController extends Controller
             'pesan' => $request->pesan,
             'status' => 'belum_dibaca',
             'dibaca_pada' => null,
-            'balasan' => null,
-            'dibalas_pada' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
