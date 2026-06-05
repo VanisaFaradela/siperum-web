@@ -1228,31 +1228,5 @@
             kategoriSlider.scrollBy({ left: -320, behavior: 'smooth' });
         };
     }
-    
-    // Intersection Observer untuk fade-in effects
-    const fadeElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');
-    const cardElements = document.querySelectorAll('.category-card, .berita-card, .galeri-item');
-    
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    fadeElements.forEach(function(el) {
-        observer.observe(el);
-    });
-    
-    cardElements.forEach(function(el) {
-        observer.observe(el);
-    });
 </script>
 @endpush
