@@ -76,7 +76,7 @@ Route::prefix('cluster')->group(function () {
 });
 Route::get('/media/cluster/{file}', function ($file) {
 
-    $path = '/home/u143856011/shared/uploads/cluster/' . $file;
+    $path = '/home/u143856011/shared/uploads/cluster/gambar/' . $file;
 
     abort_unless(file_exists($path), 404);
 
