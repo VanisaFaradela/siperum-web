@@ -1049,6 +1049,7 @@
                 <div class="view-all">
                     <a href="{{ route('berita.index') }}" class="btn-view-all-header">Lihat Semua Berita</a>
                 </div>
+                <br></br>
                 <h2>Berita & Artikel</h2>
                 <p>Informasi terbaru seputar properti dan perumahan</p>
             </div>
