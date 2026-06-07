@@ -92,6 +92,7 @@
         white-space: pre-line;
     }
 
+    /* ========== TEAM SECTION RESPONSIF ========== */
     .team-section {
         margin-bottom: 60px;
     }
@@ -103,7 +104,7 @@
         font-weight: 700;
         text-align: center;
         position: relative;
-        display: inline-block;
+        display: block;
         width: 100%;
     }
 
@@ -120,36 +121,179 @@
 
     .team-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 30px;
+    }
+
+    /* Tablet */
+    @media (max-width: 992px) {
+        .team-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .hero-section h1 {
+            font-size: 36px;
+        }
+        
+        .hero-section p {
+            font-size: 16px;
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .hero-section {
+            padding: 40px 20px;
+        }
+        
+        .hero-section h1 {
+            font-size: 28px;
+        }
+        
+        .hero-section p {
+            font-size: 14px;
+        }
+        
+        .about-page-section {
+            padding: 30px 0;
+        }
+        
+        .logo-section {
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .logo-img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .logo-section h2 {
+            font-size: 24px;
+        }
+        
+        .logo-section .slogan {
+            font-size: 14px;
+        }
+        
+        .deskripsi-section {
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .deskripsi-section h3 {
+            font-size: 22px;
+        }
+        
+        .deskripsi-section p {
+            font-size: 14px;
+        }
+        
+        .team-section h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+        
+        .team-photo {
+            height: 200px !important;
+        }
+        
+        .team-info {
+            padding: 12px !important;
+        }
+        
+        .team-info h4 {
+            font-size: 14px !important;
+        }
+        
+        .team-info .jabatan {
+            font-size: 11px !important;
+        }
+        
+        .team-info .bio {
+            font-size: 11px !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .kontak-section {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .map-section iframe {
+            height: 250px;
+        }
+        
+        .btn-back {
+            margin-top: 30px;
+            padding: 10px 25px;
+            font-size: 14px;
+        }
+    }
+
+    /* Mobile kecil */
+    @media (max-width: 480px) {
+        .team-grid {
+            gap: 12px;
+        }
+        
+        .team-photo {
+            height: 150px !important;
+        }
+        
+        .team-info {
+            padding: 8px !important;
+        }
+        
+        .team-info h4 {
+            font-size: 12px !important;
+        }
+        
+        .team-info .jabatan {
+            font-size: 10px !important;
+        }
+        
+        .team-info .bio {
+            display: none;
+        }
     }
 
     .team-card {
         background: white;
-        border-radius: 20px;
+        border-radius: 16px;
         overflow: hidden;
         box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
         text-align: center;
+        height: 100%;
     }
 
     .team-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
 
     .team-photo {
         width: 100%;
-        height: 280px;
+        height: 260px;
         object-fit: cover;
     }
 
     .team-info {
-        padding: 20px;
+        padding: 15px;
     }
 
     .team-info h4 {
-        font-size: 20px;
+        font-size: 16px;
         color: #181E4B;
         margin-bottom: 5px;
         font-weight: 700;
@@ -157,17 +301,18 @@
 
     .team-info .jabatan {
         color: #A7E27B;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 600;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .team-info .bio {
         color: #666;
-        font-size: 14px;
-        line-height: 1.6;
+        font-size: 12px;
+        line-height: 1.5;
     }
 
+    /* ========== KONTAK SECTION ========== */
     .kontak-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -196,8 +341,20 @@
         color: #A7E27B;
     }
 
+    @media (max-width: 768px) {
+        .kontak-card, .medsos-card {
+            padding: 20px;
+        }
+        
+        .kontak-card h3, .medsos-card h3 {
+            font-size: 18px;
+        }
+    }
+
     .kontak-list {
         list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     .kontak-list li {
@@ -226,20 +383,39 @@
 
     .kontak-list li span {
         color: #666;
-        font-size: 15px;
+        font-size: 14px;
+        word-break: break-word;
     }
 
+    @media (max-width: 768px) {
+        .kontak-list li {
+            padding: 10px 0;
+            gap: 12px;
+        }
+        
+        .kontak-list li i {
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+        }
+        
+        .kontak-list li span {
+            font-size: 13px;
+        }
+    }
+
+    /* Media Sosial */
     .medsos-grid {
         display: flex;
-        gap: 20px;
+        gap: 15px;
         flex-wrap: wrap;
     }
 
     .medsos-item {
         display: flex;
         align-items: center;
-        gap: 12px;
-        padding: 12px 20px;
+        gap: 10px;
+        padding: 10px 20px;
         background: #f8f9fa;
         border-radius: 50px;
         transition: all 0.3s;
@@ -251,18 +427,49 @@
         transform: translateY(-3px);
     }
 
+    .medsos-item:hover span {
+        color: white;
+    }
+
     .medsos-icon {
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
         background: white;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #A7E27B;
-        font-size: 18px;
+        font-size: 16px;
     }
 
+    .medsos-item span {
+        color: #666;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .medsos-grid {
+            gap: 10px;
+        }
+        
+        .medsos-item {
+            padding: 8px 15px;
+        }
+        
+        .medsos-icon {
+            width: 28px;
+            height: 28px;
+            font-size: 14px;
+        }
+        
+        .medsos-item span {
+            font-size: 12px;
+        }
+    }
+
+    /* MAP */
     .map-section {
         margin-top: 40px;
         border-radius: 20px;
@@ -276,6 +483,13 @@
         border: none;
     }
 
+    @media (max-width: 768px) {
+        .map-section iframe {
+            height: 250px;
+        }
+    }
+
+    /* Tombol Kembali */
     .btn-back {
         display: inline-block;
         margin-top: 40px;
@@ -291,6 +505,7 @@
 
     .btn-back:hover {
         background: #A7E27B;
+        color: white;
     }
 </style>
 @endpush
@@ -366,35 +581,35 @@
             @endif
         </div>
 
-        <!-- TEAM -->
+        <!-- TEAM (STRUKTUR ORGANISASI) - PERBAIKAN CARD TIM -->
         <div class="team-section">
             <h3>Tim Manajemen</h3>
 
             <div class="team-grid">
                 @forelse($team as $member)
                 <div class="team-card">
-                    <img
-                        src="{{ $member->foto ? route('media.team', basename($member->foto)) : 'https://via.placeholder.com/400x400' }}"
-                        alt="{{ $member->nama }}"
-                        class="team-photo"
-                    >
+                    @php
+                        $fotoPath = $member->foto ?? '';
+                        $fotoUrl = 'https://via.placeholder.com/400x400?text=No+Image';
+                        
+                        if ($fotoPath) {
+                            // Gunakan route media.team seperti di kode awal
+                            $fotoUrl = route('media.team', basename($fotoPath));
+                        }
+                    @endphp
+                    <img src="{{ $fotoUrl }}" alt="{{ $member->nama }}" class="team-photo" onerror="this.src='https://via.placeholder.com/400x400?text=No+Image'">
 
                     <div class="team-info">
                         <h4>{{ $member->nama }}</h4>
-
-                        <div class="jabatan">
-                            {{ $member->jabatan }}
-                        </div>
-
-                        <p class="bio">
-                            {{ $member->deskripsi ?? $member->bio }}
-                        </p>
+                        <div class="jabatan">{{ $member->jabatan }}</div>
+                        <p class="bio">{{ Str::limit($member->deskripsi ?? $member->bio, 100) }}</p>
                     </div>
                 </div>
                 @empty
                 <div class="team-card">
                     <div class="team-info">
                         <h4>Belum ada data tim</h4>
+                        <div class="jabatan">-</div>
                     </div>
                 </div>
                 @endforelse
@@ -487,8 +702,11 @@
         <!-- MAP -->
         <div class="map-section">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18"
-                allowfullscreen
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260485283!2d106.827721!3d-6.175392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3c3f9f5b5f5e5b5f!2sJakarta!5e0!3m2!1sid!2sid!4v1"
+                width="100%" 
+                height="350" 
+                style="border:0;" 
+                allowfullscreen="" 
                 loading="lazy">
             </iframe>
         </div>
