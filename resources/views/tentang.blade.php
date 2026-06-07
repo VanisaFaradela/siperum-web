@@ -507,6 +507,80 @@
         background: #A7E27B;
         color: white;
     }
+
+    /* ================= MOBILE ================= */
+    @media (max-width:768px){
+
+        /* Kontak menjadi 1 kolom */
+        .kontak-section{
+            display:flex;
+            flex-direction:column;
+            gap:20px;
+        }
+
+        .kontak-card,
+        .medsos-card{
+            width:100%;
+            padding:22px;
+        }
+
+        .kontak-card h3,
+        .medsos-card h3{
+            font-size:20px;
+            margin-bottom:18px;
+        }
+
+        /* Isi kontak */
+        .kontak-list li{
+            gap:12px;
+            align-items:flex-start;
+            padding:12px 0;
+        }
+
+        .kontak-list li i{
+            width:35px;
+            min-width:35px;
+            height:35px;
+            font-size:14px;
+        }
+
+        .kontak-list li span{
+            flex:1;
+            font-size:14px;
+            line-height:1.6;
+            word-break:break-word;
+        }
+
+        /* Media sosial dibuat vertikal */
+        .medsos-grid{
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+        }
+
+        .medsos-item{
+            width:100%;
+            justify-content:flex-start;
+            padding:12px 16px;
+            border-radius:12px;
+        }
+
+        .medsos-item span{
+            font-size:14px;
+        }
+
+        .medsos-icon{
+            width:36px;
+            height:36px;
+            min-width:36px;
+            font-size:16px;
+        }
+
+        /* Map */
+        .map-section iframe{
+            height:250px;
+        }
+    }
 </style>
 @endpush
 
