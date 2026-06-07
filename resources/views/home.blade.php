@@ -551,7 +551,7 @@
 
     .btn-view-all-header:hover {
         background: #A7E27B;
-        color: #fff;
+        color: #181E4B;
     }
 
     .berita-header h2 {
