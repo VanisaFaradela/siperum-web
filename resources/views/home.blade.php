@@ -534,6 +534,7 @@
         position: relative;
     }
 
+    /* Tombol */
     .berita-header .btn-view-all-header {
         position: absolute;
         top: 0;
@@ -545,11 +546,12 @@
         text-decoration: none;
         border-radius: 50px;
         font-weight: 600;
-        transition: all 0.3s;
+        transition: .3s;
     }
 
     .btn-view-all-header:hover {
         background: #A7E27B;
+        color: #fff;
     }
 
     .berita-header h2 {
@@ -559,9 +561,15 @@
         margin-bottom: 10px;
     }
 
+    .berita-header p {
+        color: #666;
+        max-width: 600px;
+        margin: auto;
+    }
+
     .berita-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3,1fr);
         gap: 30px;
     }
 
@@ -569,8 +577,8 @@
         background: white;
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        transition: all 0.3s;
+        box-shadow: 0 10px 20px rgba(0,0,0,.08);
+        transition: .3s;
     }
 
     .berita-card:hover {
@@ -1049,7 +1057,6 @@
                 <div class="view-all">
                     <a href="{{ route('berita.index') }}" class="btn-view-all-header">Lihat Semua Berita</a>
                 </div>
-                <br></br>
                 <h2>Berita & Artikel</h2>
                 <p>Informasi terbaru seputar properti dan perumahan</p>
             </div>
